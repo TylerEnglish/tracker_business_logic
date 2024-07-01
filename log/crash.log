@@ -1,0 +1,18 @@
+2024-06-26 10:44:37 =CRASH REPORT====
+  crasher:
+    initial call: package_server:init/1
+    pid: <0.341.0>
+    registered_name: []
+    exception error: {undef,[{lager,info,["Initializing package server",[]],[]},{package_server,init,1,[{file,"/mnt/c/Users/tyler/Classes/MassivelyParaCompu/BusinessLogic/tracker_business_logic/tracker_business_logic/src/package_server.erl"},{line,34}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,423}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,390}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.337.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.337.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 29
+    reductions: 585
+  neighbours:
+    neighbour: [{pid,<0.337.0>},{registered_name,[]},{initial_call,{erlang,apply,2}},{current_function,{eunit_proc,wait_for_tasks,2}},{ancestors,[]},{message_queue_len,0},{links,[<0.341.0>,<0.378.0>,<0.336.0>]},{trap_exit,false},{status,waiting},{heap_size,4185},{stack_size,82},{reductions,8159},{current_stacktrace,[{eunit_proc,wait_for_tasks,2,[{file,"eunit_proc.erl"},{line,415}]},{eunit_proc,tests_inorder,3,[{file,"eunit_proc.erl"},{line,456}]},{eunit_proc,with_timeout,3,[{file,"eunit_proc.erl"},{line,346}]},{eunit_test,enter_context,4,[{file,"eunit_test.erl"},{line,346}]},{eunit_proc,run_group,2,[{file,"eunit_proc.erl"},{line,570}]},{eunit_proc,tests_inorder,3,[{file,"eunit_proc.erl"},{line,456}]},{eunit_proc,with_timeout,3,[{file,"eunit_proc.erl"},{line,346}]},{eunit_proc,run_group,2,[{file,"eunit_proc.erl"},{line,570}]}]}]

@@ -1,0 +1,16 @@
+{application, tracker_business_logic,
+ [
+  {description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {tracker_business_logic_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    goldrush,
+    lager]},
+  {env, []},
+  {modules, [tracker_business_logic_app, tracker_business_logic_sup, package_server]},
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
