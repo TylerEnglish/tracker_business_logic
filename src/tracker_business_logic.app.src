@@ -1,16 +1,27 @@
 {application, tracker_business_logic,
- [
-  {description, "An OTP application"},
+ [{description, "An OTP application"},
   {vsn, "0.1.0"},
   {registered, []},
   {mod, {tracker_business_logic_app, []}},
   {applications,
    [kernel,
     stdlib,
-    goldrush,
-    lager]},
-  {env, []},
-  {modules, [tracker_business_logic_app, tracker_business_logic_sup, package_server]},
-  {licenses, ["Apache 2.0"]},
+    cowboy,
+    riakc,
+    uuid,
+    crypto
+   ]},
+  {env,[]},
+  {modules, [
+      tracker_business_logic_app,
+      tracker_business_logic_sup,
+      package_server,
+      default_page_h,
+      delivered_handler,
+      location_request_handler,
+      package_transferred_handler,
+      location_update_handler
+  ]},
+  {licenses, ["Apache-2.0"]},
   {links, []}
  ]}.

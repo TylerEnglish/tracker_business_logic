@@ -27,12 +27,12 @@ location_request(PackID) ->
 
 location_update(LocID, Lon, Lat) ->
     gen_server:call(?MODULE, {location_update, LocID, Lon, Lat}).
-
+         
 %% gen_server callbacks
 init([]) ->
     logger:info("Initializing package server"),
     {ok, #state{}}.
-
+        
 handle_call({package_transferred, PackID, LocID}, _From, State) ->
     logger:info("Transferring package ~p to location ~p", [PackID, LocID]),
     case validate_ids(PackID, LocID) of
@@ -42,7 +42,7 @@ handle_call({package_transferred, PackID, LocID}, _From, State) ->
         false ->
             {reply, {error, invalid_ids}, State}
     end;
-
+           
 handle_call({delivered, PackID}, _From, State) ->
     logger:info("Package ~p delivered", [PackID]),
     case maps:is_key(PackID, State#state.packages) of
@@ -52,7 +52,7 @@ handle_call({delivered, PackID}, _From, State) ->
         false ->
             {reply, {error, invalid_id}, State}
     end;
-
+          
 handle_call({location_request, PackID}, _From, State) ->
     logger:info("Location request for package ~p", [PackID]),
     case maps:find(PackID, State#state.packages) of
@@ -66,7 +66,7 @@ handle_call({location_request, PackID}, _From, State) ->
         error ->
             {reply, {error, package_not_found}, State}
     end;
-
+         
 handle_call({location_update, LocID, Lon, Lat}, _From, State) ->
     logger:info("Updating location ~p to (~p, ~p)", [LocID, Lon, Lat]),
     case validate_location(LocID, Lon, Lat) of
